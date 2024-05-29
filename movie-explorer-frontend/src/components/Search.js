@@ -11,9 +11,12 @@ const Search = () => {
     setError("");
     try {
       setMovies([]);
-      const response = await axios.get(`http://localhost:5000/search`, {
-        params: { query },
-      });
+      const response = await axios.get(
+        `https://movie-explorer-backend-gcsm.onrender.com/search`,
+        {
+          params: { query },
+        }
+      );
       setMovies(response.data);
     } catch (error) {
       console.error("Error fetching data: ", error);
